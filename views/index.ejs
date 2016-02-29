@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add product</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Add Product</h1>
+<select name="product" id="prod">
+	<option value="computers">Computers</option>
+	<option value="phones">Phones</option>
+</select>
+
+<div id="computers">
+	<form id="compForm" action="/computers" method="POST">
+	 <label for="name">Name</label>
+		<input type="text" name="name"/><br>
+	 <label for="cpuName">Cpu Name</label>
+		<input type="text" name="cpuName"/><br>
+	 <label for="cpuFrequency">Cpu Frequency</label>
+		<input type="text" name="cpuFrequency"><br>
+	 <label for="ramSize">Ram Size</label>
+		<input type="text" name="ramSize"/><br>
+	 <label for="vsName">Vs Name</label>
+		<input type="text" name="vsName"/><br>
+	<input id="compSubmit" type="submit" value="Save">
+	<input id="compReset" type="reset">
+	</form>
+</div>
+
+<div id="phones">
+	<form id="phonForm" action="/phones" method="POST">
+		<label for="name">Name</label>
+			<input type="text" name="name"/><br>
+		<label for="screenSize">Screen Size</label>
+			<input type="text" name="screenSize"/><br>
+		<label for="storageSize">Storage Size</label>
+			<input type="text" name="storageSize"/><br>
+		<input id="phonSubmit" type="submit" value="Save">
+		<input id="phonReset" type="reset">
+	</form>
+</div>
+<h1>GET PRODUCTS</h1>
+<h3>phones</h3>
+
+<select name="resp" id="phonList">
+	<%for (var i = 0; i<items.length; i++) { %>
+	<option><%= items[i].slot %></option>
+
+<% } %>
+
+</select>
+<input type="text" id="phoneResult">
+<h3>computers</h3>
+
+<select name="resp" id="compList">
+	<%for (var i = 0; i<item.length; i++) { %>
+	<option><%= item[i].slot %></option>
+
+<% } %>
+
+</select>
+<input type="text" id="compResult">
+
+
+<script src="query/jquery-1.12.0.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
